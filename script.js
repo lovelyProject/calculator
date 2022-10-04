@@ -17,6 +17,7 @@ const btnEq = document.getElementById('btnEq');
 const btnMinus = document.getElementById('btnMinus');
 const btnDel = document.getElementById('btnDel');
 const btnUm = document.getElementById('btnUm');
+const clear = document.querySelector('.clear');
 console.log(btn1.textContent)
 function operate(){
     input.value += String(this.textContent);
@@ -32,5 +33,8 @@ for (let elem of operationList){
 }
 btnEq.addEventListener('click', function(){
     let res = input.value;
-    input.value = +res;
+    input.value = eval(res);
+})
+clear.addEventListener('click', function(){
+    input.value = '';
 })
