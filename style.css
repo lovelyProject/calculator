@@ -1,37 +1,119 @@
-.main-wrapper{
-    width: 100%;
-    padding-top:     20px;
+html{
+    font-size: 114.5%;
 }
-.calculator-body{
-    margin: 0 auto;
-    width: 600px;
-    border: 2px solid black;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    background-color: bisque;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-#input{
-    width: 500px;
-    height: 60px;
-    margin: 25px 40px;
-    font-size: 26px;
+
+.app{
+    background-color: #F5F5F5;
+    width: 100vw;
+    height: 100vh;
+}
+
+.app__body{
+    width: 36rem;
+    min-height: 66.3rem;
+    background-color: #1C1C1C;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3.9rem;
+    padding-bottom: .8rem;
+
+}
+.app__top-container{
+    min-height: 21.7rem;
+    padding: 1rem 2.8rem;
+    display: flex;
+    justify-content:end;
+    flex-direction: column;
+}
+.text-area{
+    font-size: 6.4rem;
+    color: white;
 }
 .buttons-container{
-    margin: 0 40px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 4fr) ;
+    grid-template-rows: repeat(4, 8rem);
+    padding: 1rem 1.2rem;
+    gap: .7rem;
 }
 .btn{
-    width: 32%;
-    height: 80px;
-    font-size: 26px;
-    margin-bottom: 5px;
+    background-color: rgba(255, 183, 0, 0.916);
+    border-radius: 50%;
+    font-size: 4.8rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+
 }
-.clear{
-    display: block;
-    margin: 0 40px;
-    height: 80px;
-    width: 520px;
-    background-color: rosybrown;
+.btn:hover{
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+.btn:active{
+    transform: translate(0);
+}
+.box1{
+    width: 16rem;
+    border-radius: 14rem;
+}
+.btn-container_bottom{
+    display: grid;
+    padding: 0 1.2rem;
+    gap: .7rem;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+.box2{
+    background-color: #FFB800;
+    width: 8rem;
+    height: 8rem;
+
+}
+.btn_grey-light{
+    background-color: #AEAEAE;
+}
+.btn_number,.btn-number{
+    background-color: #6D6D6D;
+}
+
+@media (width <= 1350px){
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (width <= 1200px){
+    html {
+        font-size: 55%;
+    }
+}
+@media (width <= 1050px){
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (width <= 850px){
+    html {
+        font-size: 40%;
+    }
+}
+
+@media (width <= 600px ){
+    html{
+        font-size: 20%;
+    }
 }

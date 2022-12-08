@@ -1,35 +1,70 @@
 'use strict'
-let input = document.getElementById('input');
-let list = document.querySelectorAll('.elem');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
-const btn4 = document.getElementById('btn4');
-const btn5 = document.getElementById('btn5');
-const btn6 = document.getElementById('btn6');
-const btn7 = document.getElementById('btn7');
-const btn8 = document.getElementById('btn8');
-const btn9 = document.getElementById('btn9');
-const btn0 = document.getElementById('btn0');
-const btnPlus = document.getElementById('btnPlus');
-const btnEq = document.getElementById('btnEq');
-const btnMinus = document.getElementById('btnMinus');
-const btnDel = document.getElementById('btnDel');
-const btnUm = document.getElementById('btnUm');
-const clear = document.querySelector('.clear');
-console.log(btn1.textContent)
 
-function button(){
-    input.value += this.textContent;
-}
-for (let elem of list){
-    elem.addEventListener('click', button);
-}
+const input = document.getElementById('input');
+const numberList = document.querySelectorAll('.btn_number');
+const clear = document.getElementById('clear');
+const dot = document.getElementById('dot');
+const minusPlus = document.getElementById('minus-plus');
+const symbols = ['%','-','*','/','+'];
+const multiply = document.querySelector('.multiply');
+const divide = document.querySelector('.divide');
+const plus = document.querySelector('.plus');
+const minus = document.querySelector('.minus');
+const res = document.querySelector('.res');
 
-btnEq.addEventListener('click', function(){
-    let res = input.value;
-    input.value = eval(res);
+res.addEventListener('click',()=>{
+    const temp = input.textContent;
+    input.textContent = eval(temp);
 })
-clear.addEventListener('click', function(){
-    input.value = '';
+
+plus.addEventListener('click', ()=>{
+    input.textContent += '+';
+});
+
+minus.addEventListener('click', ()=>{
+    input.textContent += '-';
 })
+
+divide.addEventListener('click',function(){
+    input.textContent += '/';
+})
+
+
+numberList.forEach(elem => {
+    elem.addEventListener('click', function () {
+        if (input.textContent == 0) {
+            input.textContent = elem.textContent;
+        } else {
+            input.textContent += elem.textContent;
+        }
+
+    })
+});
+
+multiply.addEventListener('click',function(){
+    input.textContent += '*';
+})
+
+clear.addEventListener('click', () => input.textContent = 0);
+
+dot.addEventListener('click', function () {
+    input.textContent += checkInput('.') ? '' : '.';
+});
+
+multiply
+minusPlus.addEventListener('click', function () {
+    const arr = input.textContent.split('');
+
+    if (arr[0] == '-') {
+        arr.shift();
+        input.textContent = arr.join('');
+    } else if (arr[0] != '-') {
+        arr.unshift('-');
+
+        input.textContent = arr.join('');
+    }
+})
+
+function checkInput(symbol){
+   return input.textContent.split('').find(item => item == symbol);
+}
