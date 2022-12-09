@@ -1,5 +1,5 @@
 html{
-    font-size: 114.5%;
+    font-size: 75%;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
@@ -89,31 +89,40 @@ html{
     background-color: #6D6D6D;
 }
 
-@media (width <= 1350px){
+@media (max-width: 1350px) and (min-width: 1201px){
     html {
         font-size: 60%;
     }
 }
 
-@media (width <= 1200px){
+@media (max-width: 1200px) and (min-width: 1051px){
     html {
-        font-size: 55%;
+        font-size: 45%;
     }
-}
-@media (width <= 1050px){
-    html {
-        font-size: 40%;
-    }
-}
-
-@media (width <= 850px){
+}@media (max-width: 1050px) and (min-width: 851px){
     html {
         font-size: 40%;
     }
 }
 
-@media (width <= 600px ){
+@media (max-width : 850px) and (min-width: 601px){
+    html {
+        font-size: 30%;
+    }
+}
+
+@media (max-width : 600px ) and (min-width: 513px){
     html{
         font-size: 20%;
+    }
+}
+@media (max-width: 512px) and (min-width: 300px){
+    html{
+        font-size: 15%;
+    }
+}
+@media (max-width: 299px){
+    html{
+        font-size: 10%;
     }
 }
